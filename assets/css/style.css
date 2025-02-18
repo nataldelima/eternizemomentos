@@ -36,6 +36,8 @@ html, body {
     background-color: var(--white);
     font-family: var(--font-text);
     color: var(--black);
+    scroll-behavior: smooth;
+
 }
 
 h1 {
@@ -145,7 +147,7 @@ p {
     }
 
 
-    .services {
+    .services, .gallery, .contact {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -181,15 +183,23 @@ p {
         margin-bottom: 1rem;
     }
 
-    .orange {
+    .service-card .orange {
         background-color: var(--orange-alpha);
 
 
     }
 
-    .purple {
+    .service-card.purple {
         background-color: var(--purple-alpha);
     }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+        padding: 50px 0;
+    }
+
 }
 
 @media all and (min-width: 768px) and (max-width: 1024px) {}
