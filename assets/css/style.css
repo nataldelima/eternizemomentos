@@ -1,0 +1,234 @@
+/**
+ * ------------------------------------------
+ *  Responsive Grid Media Queries - 1280, 1024, 768, 480
+ *   1280-1024   - desktop (default grid)
+ *   1024-768    - tablet landscape
+ *   768-480     - tablet 
+ *   480-less    - phone landscape & smaller
+ * --------------------------------------------
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'logo';
+    src: url("../fonts/jerasans.ttf") format("truetype");
+}
+
+:root {
+    --yellow: #ffc107;
+    --purple: rgb(156, 39, 176);
+    --purple-alpha: rgba(156, 39, 176, 0.2);
+    --orange: rgb(255, 152, 0);
+    --orange-alpha: rgba(255, 152, 0, 0.2);
+    --white: #ffffff;
+    --black: #333333;
+    --gray: #696667;
+    --max-width: 1200px;
+    --font-title: 'logo', sans-serif;
+    --font-text: 'poppins', sans-serif;
+}
+
+
+html, body {
+    box-sizing: border-box;
+    margin: 0 auto;
+    background-color: var(--white);
+    font-family: var(--font-text);
+    color: var(--black);
+}
+
+h1 {
+    font-size: 2.5em;
+    color: var(--black);
+}
+
+p {
+    font-size: 1.5em;
+}
+
+
+@media all and (min-width: 1024px) {
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .logo a {
+        text-decoration: none;
+    }
+
+    .logo h1 {
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 1.2em;
+
+    }
+
+    .logo img {
+        max-height: 100px;
+        margin-right: 10px;
+
+
+    }
+
+    .d-1 {
+        font-size: 30px;
+        color: var(--gray);
+        letter-spacing: 0.3em;
+    }
+
+    .d-2 {
+        font-size: 15px;
+        color: var(--yellow);
+        letter-spacing: 1em;
+        font-family: "Raleway", serif;
+    }
+
+    .d-3 {
+        font-size: 15px;
+        color: var(--purple);
+        font-family: "Raleway", serif;
+        letter-spacing: 0.2em;
+    }
+
+    nav {
+        display: flex;
+        font-size: 2em;
+    }
+
+    nav a {
+        text-transform: uppercase;
+        color: var(--gray);
+        margin-left: 30px;
+        text-decoration: none;
+
+    }
+
+    nav a:hover {
+        color: var(--purple);
+        border-top: 5px solid var(--purple);
+        margin-top: -5px;
+    }
+
+    .hero {
+        background: var(--yellow);
+        color: var(--black);
+        text-align: center;
+        padding: 20vh 0;
+    }
+
+
+    .hero a {
+        text-decoration: none;
+        text-transform: uppercase;
+        background-color: var(--purple);
+        color: var(--white);
+        border-radius: 10px;
+        padding: 10px 20px;
+    }
+
+    .hero a:hover {
+        background: var(--black);
+        color: var(--yellow);
+    }
+
+
+    .services {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px 0;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .service-card {
+
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .service-card h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .service-card p {
+        font-size: 1em;
+    }
+
+    .service-card .emoji {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .orange {
+        background-color: var(--orange-alpha);
+
+
+    }
+
+    .purple {
+        background-color: var(--purple-alpha);
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {}
+
+@media all and (min-width: 480px) and (max-width: 768px) {}
+
+@media all and (max-width: 480px) {}
+
+
+/* Portrait */
+@media screen and (orientation:portrait) {
+    /* Portrait styles here */
+}
+
+/* Landscape */
+@media screen and (orientation:landscape) {
+    /* Landscape styles here */
+}
+
+
+/* CSS for iPhone, iPad, and Retina Displays */
+
+/* Non-Retina */
+@media screen and (-webkit-max-device-pixel-ratio: 1) {}
+
+/* Retina */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {}
+
+/* iPhone Portrait */
+@media screen and (max-device-width: 480px) and (orientation:portrait) {}
+
+/* iPhone Landscape */
+@media screen and (max-device-width: 480px) and (orientation:landscape) {}
+
+/* iPad Portrait */
+@media screen and (min-device-width: 481px) and (orientation:portrait) {}
+
+/* iPad Landscape */
+@media screen and (min-device-width: 481px) and (orientation:landscape) {}
