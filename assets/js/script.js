@@ -1,3 +1,45 @@
+// Inicialize a LightGallery
+document.addEventListener('DOMContentLoaded', () => {
+    const gallery = lightGallery(document.getElementById('animated-thumbnails'), {
+        selector: '.gallery-item',
+        speed: 500,
+        thumbnail: true,
+        animateThumb: true,
+        zoomFromOrigin: false,
+        allowMediaOverlap: true,
+        toggleThumb: true,
+        controls: true,
+        plugins: [lgThumbnail, lgShare, lgZoom],
+        sharePluginStrings: {
+            toggleFacebook: 'Compartilhar no Facebook',
+            toggleTwitter: 'Compartilhar no Twitter',
+            togglePinterest: 'Compartilhar no Pinterest',
+            toggleWhatsapp: 'Compartilhar no WhatsApp',
+            copy: 'Copiar link',
+            close: 'Fechar'
+        },
+        zoom: true, // Ativa o zoom
+        scale: 2, // Nível de zoom máximo
+        actualSize: false, // Desativa o botão de tamanho real
+        subHtmlSelectorRelative: true, // Faz a legenda ser relativa ao item da galeria
+        showThumbByDefault: false, // Oculta as miniaturas por padrão
+        //appendSubHtmlTo: '.lg-item', // Anexa a legenda ao item da galeria
+        mode: 'lg-fade', // Efeito de transição
+        download: false, // Desativa o botão de download
+        counter: true, // Mostra o contador de imagens
+        closable: true, // Permite fechar a galeria clicando fora
+        escKey: true, // Permite fechar a galeria com a tecla ESC
+        keyPress: true, // Permite navegação com teclado
+        swipeThreshold: 50, // Sensibilidade do gesto de swipe
+        enableDrag: true, // Permite arrastar a imagem
+        enableSwipe: true // Permite navegar com gestos de swipe
+
+    });
+
+    gallery.init();
+});
+
+
 const phoneNumber = "5567981316882";
 
 document.addEventListener("DOMContentLoaded", function () {

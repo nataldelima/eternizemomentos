@@ -40,6 +40,12 @@
     <link type="text/css" rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-thumbnail.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/css/lg-share.min.css"
+        integrity="sha512-FrkBvaVpD0ot5V/9+mJbthBVyxnvKAsgntEWzgCO4Gwcm9a5/mEqsMU+P+tXC2PIKoqF93MetI8SXHQCux+O9Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/css/lg-zoom.min.css"
+        integrity="sha512-S/hU6dGSK3D7SRpCvRF/IEufIr6Ikgp5vDiJarhdeFGEnw36hWZ6gVBjnwBbzjA+NEP7D8Gdm+5LL1HEsyiB1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="./assets/css/style.css">
 
@@ -234,24 +240,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/plugins/share/lg-share.min.js"
+        integrity="sha512-U8rz4zpOUatrnFUTMHhv98UUvhIpnoWm7KmReUGhgSlp6lW6PB9x/D5ixc/KhygctAyURMT5mFpE/nMU2pwKJw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.1/plugins/zoom/lg-zoom.min.js"
+        integrity="sha512-/nVDv6BV2iCSxA44tgJLUgxmURDKfoUYdpLah0Hz8s3rpWBMHeiSzrr7bplsMBf+mF2L//RXX2q/SE6B0UhCRA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script>
-        // Inicialize a LightGallery
-        document.addEventListener('DOMContentLoaded', () => {
-            const gallery = lightGallery(document.getElementById('animated-thumbnails'), {
-                selector: '.gallery-item',
-                speed: 500,
-                thumbnail: true,
-                animateThumb: true,
-                zoomFromOrigin: false,
-                allowMediaOverlap: true,
-                toggleThumb: true,
-                controls: true
-            });
 
-            gallery.init();
-        });
-    </script>
     <script src="./assets/js/script.js"></script>
 
 </body>
