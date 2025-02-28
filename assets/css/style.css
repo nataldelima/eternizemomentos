@@ -58,6 +58,8 @@ body {
     background-color: var(--color-white);
 }
 
+
+
 img {
     max-width: 100%;
     height: auto;
@@ -87,6 +89,9 @@ img {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     text-align: center;
+    text-transform: uppercase;
+    font-family: var(--font-brand);
+    letter-spacing: 0.2em;
 }
 
 /* Components */
@@ -109,10 +114,10 @@ img {
     padding: 1rem var(--container-padding);
 }
 
-/* Adicionando padding-top no main para compensar o header fixo */
-#main-content {
+
+section {
     padding-top: 100px;
-    /* Ajuste este valor de acordo com a altura do seu header */
+
 }
 
 
@@ -275,6 +280,7 @@ img {
 .gallery-section {
     padding: 4rem 0;
     background-color: var(--color-white);
+    text-align: center;
 }
 
 .gallery-grid {
@@ -282,6 +288,7 @@ img {
     grid-template-columns: repeat(5, 1fr);
     gap: var(--grid-gap);
     padding: 2rem 0;
+
 }
 
 .gallery-item {
@@ -301,8 +308,84 @@ img {
 /* Contact Section */
 .contact-section {
     padding: 4rem 0;
-    background-color: var(--color-tertiary-alpha);
+    background-color: var(--color-secondary);
+    color: var(--color-white);
 }
+
+
+.contact-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-form {
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: 15px;
+    color: var(--color-black);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.btn {
+    border-radius: 25px;
+}
+
+.btn-whatsapp {
+    padding: 15px;
+    text-decoration: none;
+    max-width: 200px;
+
+}
+
+.btn-instagram {
+    padding: 15px;
+    text-decoration: none;
+    max-width: 200px;
+
+}
+
+
+.btn-submit {
+    border: 1px solid var(--color-black);
+    font-size: x-large;
+    padding: 15px;
+}
+
+.btn-submit:hover {
+    color: var(--color-white);
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-white);
+}
+
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
 
 /* Footer */
 .site-footer {
@@ -321,6 +404,119 @@ img {
 .footer-link:hover {
     color: var(--color-white);
 }
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--z-modal);
+    cursor: pointer;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90vh;
+    position: relative;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: var(--border-radius-sm);
+    animation: zoomIn 0.3s ease;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 3rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.lightbox-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 1001;
+    transition: var(--transition-default);
+}
+
+.lightbox-arrow:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+
+/* Adicione ao seu CSS */
+.lg-outer .lg-img-wrap {
+    padding: 20px;
+}
+
+.lg-toolbar {
+    background: rgba(0, 0, 0, 0.45) !important;
+}
+
+.lg-thumb-item.active, .lg-thumb-item:hover {
+    border: 3px solid var(--color-secondary) !important;
+}
+
+
+
+
+
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .lightbox-arrow {
+        font-size: 2rem;
+        padding: 0.5rem;
+    }
+
+    .lightbox-close {
+        font-size: 2rem;
+    }
+}
+
+
+
+
+
 
 /* Media Queries */
 /* Desktop (1280px and up) */
@@ -387,6 +583,13 @@ img {
     .hero {
         padding: 15vh 0;
     }
+
+    .contact-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 3px;
+    }
+
 }
 
 /* Mobile Landscape (480px to 767px) */
@@ -406,6 +609,7 @@ img {
     .section-title {
         font-size: 2rem;
     }
+
 }
 
 /* Mobile Portrait (up to 479px) */
